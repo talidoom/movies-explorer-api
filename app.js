@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
+const router = require('./routes/router');
 const { PORT: DEFAULT_PORT } = require('./utils/constants');
 
 const { PORT = DEFAULT_PORT, MONGO_URL = 'MONGO_URL', NODE_ENV } = process.env;
@@ -20,6 +21,8 @@ mongoose
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(helmet());
+
+app.use(router);
 
 app.listen(PORT, () => {
   console.log(`Сервер слушает ${PORT}`);
