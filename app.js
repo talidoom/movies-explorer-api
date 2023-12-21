@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
+const { errors } = require('celebrate');
 const router = require('./routes/router');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const errorHandler = require('./middlewares/errorHandler');
@@ -11,7 +12,7 @@ const raterLimiter = require('./middlewares/raterLimiter');
 const { PORT: DEFAULT_PORT } = require('./utils/constants');
 
 const { PORT = DEFAULT_PORT, MONGO_URL = 'MONGO_URL', NODE_ENV } = process.env;
-const mongodb = 'mongodb://127.0.0.1:27017/bitfilmsdb';
+const mongodb = 'mongodb://127.0.0.1:27017/moviesdb';
 
 const app = express();
 app.use(cors());
@@ -31,6 +32,8 @@ app.use(raterLimiter);
 app.use(router);
 
 app.use(errorLogger);
+
+app.use(errors());
 
 app.use(errorHandler);
 
