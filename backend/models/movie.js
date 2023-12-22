@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { urlRegexPattern } = require('../utils/constants');
+const validator = require('validator');
 
 const movieSchema = new mongoose.Schema({
   director: {
@@ -34,7 +34,7 @@ const movieSchema = new mongoose.Schema({
     required: [true, 'Это поле должно быть заполнено'],
     type: String,
     validate: {
-      validator: (url) => urlRegexPattern.test(url),
+      validator: (v) => validator.isURL(v),
       message: 'Некорректный URL',
     },
   },
@@ -54,7 +54,7 @@ const movieSchema = new mongoose.Schema({
     required: [true, 'Это поле должно быть заполнено'],
     type: String,
     validate: {
-      validator: (url) => urlRegexPattern.test(url),
+      validator: (v) => validator.isURL(v),
       message: 'Некорректный URL',
     },
   },
