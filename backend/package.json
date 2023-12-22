@@ -10,6 +10,10 @@
     "lint": "npx eslint .",
     "lint:fix": "eslint . --fix"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talidoom/movies-explorer-api.git"
+  },
   "author": "Tori Elgina",
   "license": "ISC",
   "dependencies": {
@@ -30,7 +34,6 @@
     "validator": "^13.11.0",
     "winston": "^3.11.0"
   },
-  "keywords": [],
   "devDependencies": {
     "nodemon": "^3.0.2"
   }

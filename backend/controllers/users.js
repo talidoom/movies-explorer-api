@@ -33,11 +33,11 @@ const createUser = (req, res, next) => {
         email,
       }))
     .catch((err) => {
-      if (err.code === 11000) {
-        return next(new ConflictError('Пользователь с таким электронным адресом уже зарегистрирован'));
-      }
       if (err.name === 'ValidationError') {
         return next(new BadRequestError('Переданы некорректные данные при регистрации пользователя'));
+      }
+      if (err.code === 11000) {
+        return next(new ConflictError('Пользователь с таким электронным адресом уже зарегистрирован'));
       }
       return next(err);
     });
