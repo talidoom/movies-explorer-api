@@ -12,7 +12,7 @@ const raterLimiter = require('./middlewares/raterLimiter');
 const { PORT: DEFAULT_PORT } = require('./utils/constants');
 
 const { PORT = DEFAULT_PORT, MONGO_URL = 'MONGO_URL', NODE_ENV } = process.env;
-const mongodb = 'mongodb://127.0.0.1:27017/moviesdb';
+const { mongodb } = require('./utils/constants');
 
 const app = express();
 app.use(cors());
