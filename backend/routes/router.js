@@ -6,8 +6,8 @@ const auth = require('../middlewares/auth');
 const { NotFoundError } = require('../errors/NotFoundError');
 const { signinValidation, signupValidation } = require('../middlewares/celebrateValidation');
 
-router.post('/signup', signinValidation, createUser);
-router.post('/signin', signupValidation, login);
+router.post('/signup', signupValidation, createUser);
+router.post('/signin', signinValidation, login);
 
 router.use(auth);
 
