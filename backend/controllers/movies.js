@@ -1,4 +1,4 @@
-const Movie = require('../models/movie-models');
+const Movie = require('../models/movies');
 const { BadRequestError } = require('../errors/BadRequestError');
 const { AccessDeniedError } = require('../errors/AccessDeniedError');
 const { NotFoundError } = require('../errors/NotFoundError');

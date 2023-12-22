@@ -42,6 +42,7 @@ const movieSchema = new mongoose.Schema({
     required: [true, 'Это поле должно быть заполнено'],
     type: String,
     validate: {
+      validator: (v) => validator.isURL(v),
       message: 'Некорректный URL',
     },
   },
