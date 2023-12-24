@@ -11,3 +11,6 @@ IP: 158.160.48.80
 
 Frontend: movies-talidoom.nomoredomainsmonster.ru
 Backend: api.movies-talidoom.nomoredomainsmonster.ru
+
+Ссылка на Pull Requests:
+https://github.com/talidoom/movies-explorer-api/pull/1
