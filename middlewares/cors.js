@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://',
-  'http://',
+  'https://movies-talidoom.nomoredomainsmonster.ru',
+  'http://movies-talidoom.nomoredomainsmonster.ru',
   'https://localhost:3000',
   'http://localhost:3000',
   'https://localhost:3001',
